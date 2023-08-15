@@ -1,11 +1,14 @@
 ﻿using TaskManagerApp.Models;
 using TaskManagerApp.Entities;
+using TaskManagerApp.Seguranca;
+using Microsoft.EntityFrameworkCore;
 
 namespace TaskManagerApp.Formularios
 {
     public partial class CriarConta : Form
     {
         public List<string> CamposNaoPreenchidos { get; set; } = new List<string>();
+
         public CriarConta()
         {
             InitializeComponent();
@@ -16,13 +19,19 @@ namespace TaskManagerApp.Formularios
         {
             CamposNaoPreenchidos.Clear();
 
-            if(EstaPreenchidoCorretamente())
+            if (EstaPreenchidoCorretamente())
             {
                 Usuario NovoUsuario = new Usuario();
+                Senhas criptografia = new Senhas();
+
+                // Segurança da senha
+                criptografia.RegistraSenha(txt_senha.Text);
+                string SenhaCriptografada = criptografia.CriptografarSenha(txt_senha.Text, out var salt);
 
                 NovoUsuario.NomeCompleto = txt_nomeCompleto.Text;
                 NovoUsuario.NomeUsuario = txt_usuario.Text;
-                NovoUsuario.SenhaUsuario = txt_senha.Text;
+                NovoUsuario.SenhaUsuario = SenhaCriptografada;
+                NovoUsuario.SaltSenhaUsuario = salt;
                 NovoUsuario.DicaSenha = txt_dicaSenha.Text;
 
                 Usuarios Usuarios = new Usuarios();
@@ -31,12 +40,21 @@ namespace TaskManagerApp.Formularios
                 {
                     Usuarios.AdicionarNovoUsuario(NovoUsuario);
                 }
-                catch(Exception ex)
+                catch (DbUpdateException dbex)
                 {
-                    MessageBox.Show($"Erro ao adicionar novo usuário: {ex.Message}", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new DbUpdateException($"Erro ao adicionar novo usuário: {dbex.Message}. Usuário já existe");
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Erro ao adicionar novo usuário: {ex.Message}");
                 }
 
-                this.Close();
+                DialogResult resultado = MessageBox.Show($"Usuário: {NovoUsuario.NomeUsuario} criado com sucesso, deseja voltar a tela de login?", "Usuário criado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -50,16 +68,17 @@ namespace TaskManagerApp.Formularios
         {
             bool statusDoPreenchimento = true;
 
-            foreach(Control painel in this.Controls)
+            // TODO: arrumar essa verificação de campos em branco depois
+            foreach (Control painel in this.Controls)
             {
-                foreach(Control campo in painel.Controls)
+                foreach (Control campo in painel.Controls)
                 {
-                    if(campo is Label)
+                    if (campo is Label)
                     {
                         CamposNaoPreenchidos.Add(campo.Text.Replace(":", ""));
                     }
 
-                    if((string)campo.Tag == "campoObrigatorio" && string.IsNullOrEmpty(campo.Text) || string.IsNullOrWhiteSpace(campo.Text))
+                    if ((string)campo.Tag == "campoObrigatorio" && string.IsNullOrEmpty(campo.Text) || string.IsNullOrWhiteSpace(campo.Text))
                     {
                         statusDoPreenchimento = false;
                     }

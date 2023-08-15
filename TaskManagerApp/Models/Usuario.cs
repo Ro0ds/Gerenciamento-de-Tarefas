@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TaskManagerApp.Models;
+﻿namespace TaskManagerApp.Models;
 
 public partial class Usuario
 {
@@ -12,6 +9,8 @@ public partial class Usuario
     public string NomeUsuario { get; set; } = null!;
 
     public string SenhaUsuario { get; set; } = null!;
+
+    public byte[] SaltSenhaUsuario { get; set; } = null!;
 
     public string? DicaSenha { get; set; }
 }
