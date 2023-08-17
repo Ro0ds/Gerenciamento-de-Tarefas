@@ -27,6 +27,10 @@ namespace TaskManagerApp.Formularios
                 principal.ShowDialog();
                 Close();
             }
+            else
+            {
+                this.ActiveControl = txt_usuario;
+            }
         }
     }
 }

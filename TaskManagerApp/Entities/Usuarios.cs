@@ -1,4 +1,5 @@
-﻿using TaskManagerApp.Models;
+﻿using TaskManagerApp.Formularios;
+using TaskManagerApp.Models;
 using TaskManagerApp.Seguranca;
 
 namespace TaskManagerApp.Entities
@@ -18,7 +19,7 @@ namespace TaskManagerApp.Entities
         public bool LogarUsuario(string usuario, string senha)
         {
             Senhas senhas = new Senhas();
-            
+
             // Verificar se usuario existe
             bool usuarioExiste = _context.Usuarios.Any(u => u.NomeUsuario == usuario);
 
@@ -32,22 +33,22 @@ namespace TaskManagerApp.Entities
 
                 bool senhaEstaCorreta = senhas.VerificarSenha(senha, senhaDoBanco, saltSenhaDoBanco);
 
-                if (senhaEstaCorreta)
+                if(senhaEstaCorreta)
                 {
                     string? nomeCompleto = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.NomeCompleto).FirstOrDefault();
 
-                    MessageBox.Show($"Bem vindo {nomeCompleto} ao TaskManagerApp", "Login realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Bem vindo(a) {nomeCompleto}!", "Login realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 else
                 {
-                    MessageBox.Show($"Usuário não localizado na base de dados ou senha incorreta", "Usuário não localizado!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Senha incorreta.", "Senha incorreta", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show($"Usuário não localizado na base de dados ou senha incorreta", "Usuário não localizado!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário não localizado na base de dados.", "Usuário não localizado!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return false;
             }
         }
