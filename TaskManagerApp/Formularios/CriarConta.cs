@@ -19,7 +19,7 @@ namespace TaskManagerApp.Formularios
         {
             CamposNaoPreenchidos.Clear();
 
-            if(EstaPreenchido())
+            if (EstaPreenchido())
             {
                 Usuario NovoUsuario = new Usuario();
                 Senhas criptografia = new Senhas();
@@ -35,7 +35,7 @@ namespace TaskManagerApp.Formularios
                 NovoUsuario.SaltSenhaUsuario = salt;
                 NovoUsuario.DicaSenha = txt_dicaSenha.Text;
 
-                if(EmailEstaCorreto(NovoUsuario.EmailUsuario))
+                if (EmailEstaCorreto(NovoUsuario.EmailUsuario))
                 {
                     Usuarios Usuarios = new Usuarios();
 
@@ -43,18 +43,18 @@ namespace TaskManagerApp.Formularios
                     {
                         Usuarios.AdicionarNovoUsuario(NovoUsuario);
                     }
-                    catch(DbUpdateException dbex)
+                    catch (DbUpdateException dbex)
                     {
                         throw new DbUpdateException($"Erro ao adicionar novo usuário: {dbex.Message}. Usuário já existe");
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         throw new Exception($"Erro ao adicionar novo usuário: {ex.Message}");
                     }
 
                     DialogResult resultado = MessageBox.Show($"Usuário: {NovoUsuario.NomeUsuario} criado com sucesso, deseja voltar a tela de login?", "Usuário criado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-                    if(resultado == DialogResult.Yes)
+                    if (resultado == DialogResult.Yes)
                     {
                         this.Close();
                     }
@@ -77,16 +77,16 @@ namespace TaskManagerApp.Formularios
             bool statusDoPreenchimento = true;
 
             // TODO: arrumar essa verificação de campos em branco depois
-            foreach(Control painel in this.Controls)
+            foreach (Control painel in this.Controls)
             {
-                foreach(Control campo in painel.Controls)
+                foreach (Control campo in painel.Controls)
                 {
-                    if(campo is Label)
+                    if (campo is Label)
                     {
                         CamposNaoPreenchidos.Add(campo.Text.Replace(":", ""));
                     }
 
-                    if((string)campo.Tag == "campoObrigatorio" && string.IsNullOrEmpty(campo.Text) || string.IsNullOrWhiteSpace(campo.Text))
+                    if ((string)campo.Tag == "campoObrigatorio" && string.IsNullOrEmpty(campo.Text) || string.IsNullOrWhiteSpace(campo.Text))
                     {
                         statusDoPreenchimento = false;
                     }
@@ -98,7 +98,7 @@ namespace TaskManagerApp.Formularios
 
         public bool EmailEstaCorreto(string email)
         {
-            if(email.Contains('@') && email.Contains('.'))
+            if (email.Contains('@') && email.Contains('.'))
             {
                 return true;
             }

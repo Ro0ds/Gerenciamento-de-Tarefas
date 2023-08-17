@@ -18,4 +18,6 @@ public partial class Usuario
     public byte[] SaltSenhaUsuario { get; set; } = null!;
 
     public string? DicaSenha { get; set; }
+
+    public string GrupoPermissao { get; set; } = "USUARIO";
 }

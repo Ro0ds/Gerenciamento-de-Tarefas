@@ -1,6 +1,6 @@
 ﻿namespace TaskManagerApp.Formularios
 {
-    partial class CriarConta
+    partial class EsqueceuSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl_title = new Label();
             panel1 = new Panel();
             txt_email = new TextBox();
             label5 = new Label();
@@ -39,21 +38,11 @@
             txt_nomeCompleto = new TextBox();
             label1 = new Label();
             txt_usuario = new TextBox();
-            btn_entrar = new Button();
+            btn_enviarRecuperaSenha = new Button();
             label2 = new Label();
+            lbl_title = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // lbl_title
-            // 
-            lbl_title.Dock = DockStyle.Top;
-            lbl_title.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_title.Location = new Point(0, 0);
-            lbl_title.Name = "lbl_title";
-            lbl_title.Size = new Size(466, 44);
-            lbl_title.TabIndex = 1;
-            lbl_title.Text = "TaskManagerApp - ";
-            lbl_title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -68,13 +57,13 @@
             panel1.Controls.Add(txt_nomeCompleto);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(txt_usuario);
-            panel1.Controls.Add(btn_entrar);
+            panel1.Controls.Add(btn_enviarRecuperaSenha);
             panel1.Controls.Add(label2);
             panel1.ForeColor = SystemColors.ActiveCaptionText;
-            panel1.Location = new Point(34, 67);
+            panel1.Location = new Point(34, 74);
             panel1.Name = "panel1";
             panel1.Size = new Size(403, 244);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
             // 
             // txt_email
             // 
@@ -168,16 +157,15 @@
             txt_usuario.TabIndex = 3;
             txt_usuario.Tag = "camposObrigatorios";
             // 
-            // btn_entrar
+            // btn_enviarRecuperaSenha
             // 
-            btn_entrar.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_entrar.Location = new Point(10, 191);
-            btn_entrar.Name = "btn_entrar";
-            btn_entrar.Size = new Size(379, 37);
-            btn_entrar.TabIndex = 6;
-            btn_entrar.Text = "Cadastrar";
-            btn_entrar.UseVisualStyleBackColor = true;
-            btn_entrar.Click += btn_entrar_Click;
+            btn_enviarRecuperaSenha.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_enviarRecuperaSenha.Location = new Point(10, 191);
+            btn_enviarRecuperaSenha.Name = "btn_enviarRecuperaSenha";
+            btn_enviarRecuperaSenha.Size = new Size(379, 37);
+            btn_enviarRecuperaSenha.TabIndex = 6;
+            btn_enviarRecuperaSenha.Text = "Enviar";
+            btn_enviarRecuperaSenha.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -189,18 +177,28 @@
             label2.Text = "Usuário:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // CriarConta
+            // lbl_title
+            // 
+            lbl_title.Dock = DockStyle.Top;
+            lbl_title.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_title.Location = new Point(0, 0);
+            lbl_title.Name = "lbl_title";
+            lbl_title.Size = new Size(466, 44);
+            lbl_title.TabIndex = 3;
+            lbl_title.Text = "TaskManagerApp - ";
+            lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // EsqueceuSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(466, 324);
             Controls.Add(panel1);
             Controls.Add(lbl_title);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "CriarConta";
+            Name = "EsqueceuSenha";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Criar Conta";
+            Text = "Recuperação de Senha";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -208,8 +206,9 @@
 
         #endregion
 
-        private Label lbl_title;
         private Panel panel1;
+        private TextBox txt_email;
+        private Label label5;
         private TextBox txt_senha;
         private Label label3;
         private TextBox txt_dicaSenha;
@@ -217,9 +216,8 @@
         private TextBox txt_nomeCompleto;
         private Label label1;
         private TextBox txt_usuario;
-        private Button btn_entrar;
+        private Button btn_enviarRecuperaSenha;
         private Label label2;
-        private TextBox txt_email;
-        private Label label5;
+        private Label lbl_title;
     }
 }

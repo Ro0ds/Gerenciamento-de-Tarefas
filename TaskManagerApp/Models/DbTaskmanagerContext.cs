@@ -55,6 +55,10 @@ public partial class DbTaskmanagerContext : DbContext
             entity.Property(e => e.DicaSenha)
                 .HasMaxLength(100)
                 .HasColumnName("DICA_SENHA");
+
+            entity.Property(e => e.GrupoPermissao)
+                .HasMaxLength(20)
+                .HasColumnName("GRUPO_PERMISSAO");
         });
 
         OnModelCreatingPartial(modelBuilder);

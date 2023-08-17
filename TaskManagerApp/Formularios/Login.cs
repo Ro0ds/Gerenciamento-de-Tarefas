@@ -20,7 +20,7 @@ namespace TaskManagerApp.Formularios
         {
             Usuarios usuarios = new Usuarios();
 
-            if(usuarios.LogarUsuario(txt_usuario.Text, txt_senha.Text))
+            if (usuarios.LogarUsuario(txt_usuario.Text, txt_senha.Text))
             {
                 TelaPrincipal principal = new TelaPrincipal();
                 Hide();
@@ -31,6 +31,11 @@ namespace TaskManagerApp.Formularios
             {
                 this.ActiveControl = txt_usuario;
             }
+        }
+
+        private void llbl_recuperarSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

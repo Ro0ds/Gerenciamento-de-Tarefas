@@ -42,7 +42,8 @@ namespace TaskManagerApp.Entities
                 }
                 else
                 {
-                    MessageBox.Show("Senha incorreta.", "Senha incorreta", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    string? dicaDaSenha = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.DicaSenha).FirstOrDefault();
+                    MessageBox.Show($"Senha incorreta.\nDica da senha: {dicaDaSenha}", "Senha incorreta", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     return false;
                 }
             }
