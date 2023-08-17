@@ -6,32 +6,48 @@ namespace TaskManagerApp
     public partial class TelaPrincipal : Form
     {
         public Font FontPadrao { get; set; }
-        public bool Selecionado { get; set; } = false;
+        public Font FontNegrito { get; set; }
+        public Color CorBrancoFumaca { get; set; } = Color.WhiteSmoke;
+        public Color CorPreta { get; set; } = Color.Black;
 
         private Form? Formulario;
+        private Label? Label;
+
+        public (Form _formulario, Label _label, bool _bool) EstaEstilizado;
 
         public TelaPrincipal()
         {
             InitializeComponent();
             lbl_title.Text = "Painel Principal";
 
-            // pegar fonte padrão das labels
             FontPadrao = lbl_menuPrincipal.Font;
+            FontNegrito = new Font(FontPadrao, FontStyle.Bold);
+
+            EstaEstilizado._formulario = Formulario;
+            EstaEstilizado._label = Label;
+            EstaEstilizado._bool = true;
         }
 
         #region Estilização
+        public void MenuSelecionado(Label label)
+        {
+            label.Font = FontNegrito;
+            label.ForeColor = CorBrancoFumaca;
+            label.BackColor = CorPreta;
+        }
+
         public void MenuEstiloHover(Label label)
         {
-            label.Font = new Font(FontPadrao, FontStyle.Bold);
-            label.ForeColor = Color.White;
-            label.BackColor = Color.Black;
+            label.Font = FontPadrao;
+            label.ForeColor = CorBrancoFumaca;
+            label.BackColor = CorPreta;
         }
 
         public void MenuEstiloLeave(Label label)
         {
             label.Font = FontPadrao;
-            label.ForeColor = Color.Black;
-            label.BackColor = Color.WhiteSmoke;
+            label.ForeColor = CorPreta;
+            label.BackColor = CorBrancoFumaca;
         }
         #endregion
 
@@ -79,12 +95,28 @@ namespace TaskManagerApp
         #region MouseLeave
         private void lbl_menuPrincipal_MouseLeave(object sender, EventArgs e)
         {
-            MenuEstiloLeave(lbl_menuPrincipal);
+            if(EstaEstilizado._bool == false && EstaEstilizado._label != null)
+            {
+                MenuEstiloLeave(lbl_menuPrincipal);
+            }
+            else if(EstaEstilizado._formulario == Formulario && EstaEstilizado._label == Label && EstaEstilizado._bool == true)
+            {
+                AtualizarSelecionado(EstaEstilizado._label);
+            }
+
+            MessageBox.Show(EstaEstilizado.GetType().ToString());
         }
 
         private void lbl_criarTarefa_MouseLeave(object sender, EventArgs e)
         {
-            MenuEstiloLeave(lbl_criarTarefa);
+            if(EstaEstilizado._bool == false && EstaEstilizado._label != null)
+            {
+                MenuEstiloLeave(lbl_criarTarefa);
+            }
+            else if(EstaEstilizado._formulario == Formulario && EstaEstilizado._label == Label && EstaEstilizado._bool == true)
+            {
+                AtualizarSelecionado(EstaEstilizado._label);
+            }
         }
 
         private void lbl_listarTarefa_MouseLeave(object sender, EventArgs e)
@@ -128,6 +160,9 @@ namespace TaskManagerApp
 
             Formulario = new MenuPrincipal();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_criarTarefa_Click(object sender, EventArgs e)
@@ -139,6 +174,9 @@ namespace TaskManagerApp
 
             Formulario = new CriarTarefas();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_listarTarefa_Click(object sender, EventArgs e)
@@ -150,6 +188,9 @@ namespace TaskManagerApp
 
             Formulario = new ListarTarefas();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_detalharTarefa_Click(object sender, EventArgs e)
@@ -161,6 +202,9 @@ namespace TaskManagerApp
 
             Formulario = new DetalharTarefas();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_editarTarefa_Click(object sender, EventArgs e)
@@ -172,6 +216,9 @@ namespace TaskManagerApp
 
             Formulario = new EditarTarefas();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_statusTarefa_Click(object sender, EventArgs e)
@@ -183,6 +230,9 @@ namespace TaskManagerApp
 
             Formulario = new StatusTarefas();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_configuracoes_Click(object sender, EventArgs e)
@@ -194,6 +244,9 @@ namespace TaskManagerApp
 
             Formulario = new Configuracoes();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
 
         private void lbl_perfilUsuario_Click(object sender, EventArgs e)
@@ -205,6 +258,9 @@ namespace TaskManagerApp
 
             Formulario = new PerfilUsuario();
             MostrarFormularioNaTela(Formulario);
+
+            Label = (Label)sender;
+            AtualizarSelecionado(Label);
         }
         #endregion
 
@@ -224,6 +280,33 @@ namespace TaskManagerApp
             Formulario.Close();
         }
 
+        public void RetirarEstiloDosMenus()
+        {
+            foreach(Control painel in Controls)
+            {
+                foreach(Control label in painel.Controls)
+                {
+                    if(label is Label && (string)label.Tag == "menu")
+                    {
+                        label.Font = FontPadrao;
+                        label.ForeColor = CorPreta;
+                        label.BackColor = CorBrancoFumaca;
+                    }
+                }
+            }
+        }
+
+        public void AtualizarSelecionado(Label nomeMenu)
+        {
+            RetirarEstiloDosMenus();
+
+            if(Formulario.Name == lbl_title.Text)
+            {
+                MenuSelecionado(nomeMenu);
+            }
+        }
+
+        // Debug - desativar depois
         private void lbl_title_Click(object sender, EventArgs e)
         {
             var forms = string.Join(',', Formulario.Name);

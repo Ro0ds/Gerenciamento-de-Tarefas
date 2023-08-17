@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_perfilUsuario = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.lbl_criarTarefa = new System.Windows.Forms.Label();
             this.lbl_menuPrincipal = new System.Windows.Forms.Label();
             this.painel = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +87,7 @@
             this.lbl_perfilUsuario.Text = "Perfil de Usuário";
             this.lbl_perfilUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_perfilUsuario.Click += new System.EventHandler(this.lbl_perfilUsuario_Click);
-            this.lbl_perfilUsuario.MouseLeave += new System.EventHandler(this.lbl_perfilUsuario_MouseLeave);
+            //this.lbl_perfilUsuario.MouseLeave += new System.EventHandler(this.lbl_perfilUsuario_MouseLeave);
             this.lbl_perfilUsuario.MouseHover += new System.EventHandler(this.lbl_perfilUsuario_MouseHover);
             // 
             // lbl_configuracoes
@@ -100,7 +102,7 @@
             this.lbl_configuracoes.Text = "Configurações";
             this.lbl_configuracoes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_configuracoes.Click += new System.EventHandler(this.lbl_configuracoes_Click);
-            this.lbl_configuracoes.MouseLeave += new System.EventHandler(this.lbl_configuracoes_MouseLeave);
+            //this.lbl_configuracoes.MouseLeave += new System.EventHandler(this.lbl_configuracoes_MouseLeave);
             this.lbl_configuracoes.MouseHover += new System.EventHandler(this.lbl_configuracoes_MouseHover);
             // 
             // lbl_statusTarefa
@@ -201,6 +203,11 @@
             this.painel.Size = new System.Drawing.Size(552, 434);
             this.painel.TabIndex = 4;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -233,5 +240,6 @@
         private Label lbl_listarTarefa;
         private Label lbl_criarTarefa;
         private Panel painel;
+        public System.Windows.Forms.Timer timer;
     }
 }
