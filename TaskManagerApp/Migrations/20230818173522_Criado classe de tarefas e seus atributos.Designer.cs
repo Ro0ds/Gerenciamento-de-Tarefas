@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskManagerApp.Models;
 
@@ -10,9 +11,11 @@ using TaskManagerApp.Models;
 namespace TaskManagerApp.Migrations
 {
     [DbContext(typeof(DbTaskmanagerContext))]
-    partial class DbTaskmanagerContextModelSnapshot : ModelSnapshot
+    [Migration("20230818173522_Criado classe de tarefas e seus atributos")]
+    partial class Criadoclassedetarefaseseusatributos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

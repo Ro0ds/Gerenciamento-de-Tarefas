@@ -10,6 +10,7 @@ public partial class DbTaskmanagerContext : DbContext
         : base(options) { }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Tarefa> Tarefas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseMySql("server=localhost;database=DB_TASKMANAGER;uid=developer;pwd=Acesso@123", ServerVersion.Parse("8.0.23-mysql"));

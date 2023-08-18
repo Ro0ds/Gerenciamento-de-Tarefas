@@ -7,6 +7,7 @@ namespace TaskManagerApp.Entities
     internal class Usuarios
     {
         private DbTaskmanagerContext _context = new DbTaskmanagerContext();
+        //string? dicaDaSenha = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.DicaSenha).FirstOrDefault();
 
         public Usuarios() { }
 
@@ -36,14 +37,18 @@ namespace TaskManagerApp.Entities
                 if(senhaEstaCorreta)
                 {
                     string? nomeCompleto = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.NomeCompleto).FirstOrDefault();
+                    int idUsuario = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.CodUsuario).FirstOrDefault();
 
                     MessageBox.Show($"Bem vindo(a) {nomeCompleto}!", "Login realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    TelaPrincipal.UsuarioAdministrador(_context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.GrupoPermissao == "ADMINISTRADOR").FirstOrDefault());
+                    TelaPrincipal.InformacoesDeUsuario(nomeCompleto, idUsuario);
+
                     return true;
                 }
                 else
                 {
-                    string? dicaDaSenha = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.DicaSenha).FirstOrDefault();
-                    MessageBox.Show($"Senha incorreta.\nDica da senha: {dicaDaSenha}", "Senha incorreta", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show($"Senha incorreta.", "Senha incorreta", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     return false;
                 }
             }

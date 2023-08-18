@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_administrador = new System.Windows.Forms.Label();
             this.lbl_perfilUsuario = new System.Windows.Forms.Label();
             this.lbl_configuracoes = new System.Windows.Forms.Label();
             this.lbl_statusTarefa = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.lbl_administrador);
             this.panel1.Controls.Add(this.lbl_perfilUsuario);
             this.panel1.Controls.Add(this.lbl_configuracoes);
             this.panel1.Controls.Add(this.lbl_statusTarefa);
@@ -75,6 +77,23 @@
             this.panel1.Size = new System.Drawing.Size(156, 434);
             this.panel1.TabIndex = 3;
             // 
+            // lbl_administrador
+            // 
+            this.lbl_administrador.Enabled = false;
+            this.lbl_administrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_administrador.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_administrador.Location = new System.Drawing.Point(2, 393);
+            this.lbl_administrador.Name = "lbl_administrador";
+            this.lbl_administrador.Size = new System.Drawing.Size(153, 32);
+            this.lbl_administrador.TabIndex = 12;
+            this.lbl_administrador.Tag = "menu";
+            this.lbl_administrador.Text = "Painel Administrativo";
+            this.lbl_administrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_administrador.Visible = false;
+            this.lbl_administrador.Click += new System.EventHandler(this.lbl_administrador_Click);
+            this.lbl_administrador.MouseLeave += new System.EventHandler(this.lbl_administrador_MouseLeave);
+            this.lbl_administrador.MouseHover += new System.EventHandler(this.lbl_administrador_MouseHover);
+            // 
             // lbl_perfilUsuario
             // 
             this.lbl_perfilUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,7 +106,7 @@
             this.lbl_perfilUsuario.Text = "Perfil de Usuário";
             this.lbl_perfilUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_perfilUsuario.Click += new System.EventHandler(this.lbl_perfilUsuario_Click);
-            //this.lbl_perfilUsuario.MouseLeave += new System.EventHandler(this.lbl_perfilUsuario_MouseLeave);
+            this.lbl_perfilUsuario.MouseLeave += new System.EventHandler(this.lbl_perfilUsuario_MouseLeave);
             this.lbl_perfilUsuario.MouseHover += new System.EventHandler(this.lbl_perfilUsuario_MouseHover);
             // 
             // lbl_configuracoes
@@ -102,7 +121,7 @@
             this.lbl_configuracoes.Text = "Configurações";
             this.lbl_configuracoes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_configuracoes.Click += new System.EventHandler(this.lbl_configuracoes_Click);
-            //this.lbl_configuracoes.MouseLeave += new System.EventHandler(this.lbl_configuracoes_MouseLeave);
+            this.lbl_configuracoes.MouseLeave += new System.EventHandler(this.lbl_configuracoes_MouseLeave);
             this.lbl_configuracoes.MouseHover += new System.EventHandler(this.lbl_configuracoes_MouseHover);
             // 
             // lbl_statusTarefa
@@ -241,5 +260,6 @@
         private Label lbl_criarTarefa;
         private Panel painel;
         public System.Windows.Forms.Timer timer;
+        private Label lbl_administrador;
     }
 }
