@@ -8,10 +8,19 @@ namespace TaskManagerApp.Entities
 
         public Tarefas() { }
 
-        public void AdicionarTarefa(Tarefa tarefa)
+        public bool AdicionarTarefa(Tarefa tarefa)
         {
-            _context.Tarefas.Add(tarefa);
-            _context.SaveChanges();
+            try
+            {
+                _context.Add(tarefa);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Não foi possível criar a tarefa na base de dados.\nErro: {ex.Message}", "Adicionar tarefa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
     }
 }

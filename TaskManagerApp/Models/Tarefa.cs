@@ -15,11 +15,11 @@ namespace TaskManagerApp.Models
         public DateTime DataVencimentoTarefa { get; set; }
         public int PrioridadeTarefa { get; set; }
         public int SituacaoTarefa { get; set; }
-        public Usuario? Usuario { get; set; }
+        public int CodUsuario { get; set; }
 
-        public Tarefa(int codTarefa, string nomeTarefa, string descricaoTarefa, DateTime dataVencimentoTarefa, int prioridadeTarefa, int situacaoTarefa)
+        public Tarefa() { }
+        public Tarefa(string nomeTarefa, string descricaoTarefa, DateTime dataVencimentoTarefa, int prioridadeTarefa, int situacaoTarefa)
         {
-            CodTarefa = codTarefa;
             NomeTarefa = nomeTarefa;
             DescricaoTarefa = descricaoTarefa;
             DataVencimentoTarefa = dataVencimentoTarefa;

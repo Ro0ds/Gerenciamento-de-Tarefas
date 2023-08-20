@@ -6,7 +6,7 @@ namespace TaskManagerApp
     {
         public static bool UsuarioAdministrativo { get; private set; } = false;
         public static string? UsuarioConectado { get; private set; }
-        public static int IdUsuarioConectado { get; private set; }
+        public static int CodUsuarioConectado { get; private set; }
 
         public Font FontPadrao { get; set; }
         public Font FontNegrito { get; set; }
@@ -271,7 +271,7 @@ namespace TaskManagerApp
         public static void InformacoesDeUsuario(string nome, int id)
         {
             UsuarioConectado = nome;
-            IdUsuarioConectado = id;
+            CodUsuarioConectado = id;
         }
     }
 }
