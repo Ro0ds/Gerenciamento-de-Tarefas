@@ -1,30 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace TaskManagerApp.Models
+namespace TaskManagerApp.Models;
+
+public partial class Tarefa
 {
-    public partial class Tarefa
-    {
-        [Key]
-        public int CodTarefa { get; set; }
+    public int CodTarefa { get; set; }
 
-        [Required]
-        public string NomeTarefa { get; set; }
-        public string DescricaoTarefa { get; set; }
+    public int CodUsuario { get; set; }
 
-        [Required]
-        public DateTime DataVencimentoTarefa { get; set; }
-        public int PrioridadeTarefa { get; set; }
-        public int SituacaoTarefa { get; set; }
-        public int CodUsuario { get; set; }
+    public string NomeTarefa { get; set; } = null!;
 
-        public Tarefa() { }
-        public Tarefa(string nomeTarefa, string descricaoTarefa, DateTime dataVencimentoTarefa, int prioridadeTarefa, int situacaoTarefa)
-        {
-            NomeTarefa = nomeTarefa;
-            DescricaoTarefa = descricaoTarefa;
-            DataVencimentoTarefa = dataVencimentoTarefa;
-            PrioridadeTarefa = prioridadeTarefa;
-            SituacaoTarefa = situacaoTarefa;
-        }
-    }
+    public string? DescricaoTarefa { get; set; }
+
+    public DateTime? DataVencimentoTarefa { get; set; }
+
+    public int PrioridadeTarefa { get; set; }
+
+    public int SituacaoTarefa { get; set; }
+
+    public virtual Usuario CodUsuarioNavigation { get; set; } = null!;
 }
