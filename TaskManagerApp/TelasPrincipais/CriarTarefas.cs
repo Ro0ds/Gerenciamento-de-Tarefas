@@ -34,7 +34,9 @@ namespace TaskManagerApp.TelasPrincipais
                 "AltaPrioridade" => (int)StatusTarefa.AltaPrioridade,
                 _ => (int)StatusTarefa.BaixaPrioridade,
             };
-            tarefa.SituacaoTarefa = 1;
+
+            tarefa.SituacaoTarefa = (int)SituacaoTarefa.Criada;
+            
             tarefa.CodUsuario = TelaPrincipal.CodUsuarioConectado;
 
             if (tarefas.AdicionarTarefa(tarefa))

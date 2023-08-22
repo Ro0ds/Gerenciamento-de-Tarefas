@@ -81,6 +81,7 @@ public partial class DbTaskmanagerContext : DbContext
                 .HasColumnName("EMAIL_USUARIO");
             entity.Property(e => e.GrupoPermissao)
                 .HasMaxLength(15)
+                .HasDefaultValueSql("'USUARIO'")
                 .HasColumnName("GRUPO_PERMISSAO");
             entity.Property(e => e.NomeCompleto)
                 .HasMaxLength(50)
