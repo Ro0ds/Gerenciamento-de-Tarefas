@@ -23,6 +23,7 @@ namespace TaskManagerApp.TelasPrincipais
             tarefa.NomeTarefa = txt_nomeTarefa.Text;
             tarefa.DescricaoTarefa = rctxt_descricao.Text;
             tarefa.DataVencimentoTarefa = dtp_dataVencimento.Value;
+            tarefa.CriadaEm = DateTime.Now;
 
             Prioridade = cb_prioridade.Text;
 

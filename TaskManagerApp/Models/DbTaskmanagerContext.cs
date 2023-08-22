@@ -20,9 +20,8 @@ public partial class DbTaskmanagerContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseMySql("server=localhost;database=DB_TASKMANAGER;uid=developer;pwd=Acesso@123", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseMySql("server=localhost;database=DB_TASKMANAGER;uid=developer;pwd=Acesso@123", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,7 +29,8 @@ public partial class DbTaskmanagerContext : DbContext
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");
 
-        modelBuilder.Entity<Tarefa>(entity => {
+        modelBuilder.Entity<Tarefa>(entity =>
+        {
             entity.HasKey(e => e.CodTarefa).HasName("PRIMARY");
 
             entity.ToTable("tarefas");
@@ -39,6 +39,9 @@ public partial class DbTaskmanagerContext : DbContext
 
             entity.Property(e => e.CodTarefa).HasColumnName("COD_TAREFA");
             entity.Property(e => e.CodUsuario).HasColumnName("COD_USUARIO");
+            entity.Property(e => e.CriadaEm)
+                .HasMaxLength(6)
+                .HasColumnName("CRIADA_EM");
             entity.Property(e => e.DataVencimentoTarefa)
                 .HasMaxLength(6)
                 .HasColumnName("DATA_VENCIMENTO_TAREFA");
@@ -61,7 +64,8 @@ public partial class DbTaskmanagerContext : DbContext
                 .HasConstraintName("tarefas_ibfk_1");
         });
 
-        modelBuilder.Entity<Usuario>(entity => {
+        modelBuilder.Entity<Usuario>(entity =>
+        {
             entity.HasKey(e => e.CodUsuario).HasName("PRIMARY");
 
             entity.ToTable("usuarios");

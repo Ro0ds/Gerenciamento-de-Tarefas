@@ -13,6 +13,8 @@ public partial class Tarefa
 
     public string? DescricaoTarefa { get; set; }
 
+    public DateTime? CriadaEm { get; set; }
+
     public DateTime? DataVencimentoTarefa { get; set; }
 
     public int PrioridadeTarefa { get; set; }
