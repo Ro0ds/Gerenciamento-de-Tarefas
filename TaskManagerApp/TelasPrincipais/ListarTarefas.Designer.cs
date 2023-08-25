@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridListarTarefas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListarTarefas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridListarTarefas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(528, 299);
-            this.dataGridView1.TabIndex = 0;
+            this.gridListarTarefas.AllowUserToAddRows = false;
+            this.gridListarTarefas.AllowUserToDeleteRows = false;
+            this.gridListarTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListarTarefas.Location = new System.Drawing.Point(12, 12);
+            this.gridListarTarefas.Name = "gridListarTarefas";
+            this.gridListarTarefas.ReadOnly = true;
+            this.gridListarTarefas.RowTemplate.Height = 25;
+            this.gridListarTarefas.Size = new System.Drawing.Size(528, 299);
+            this.gridListarTarefas.TabIndex = 0;
             // 
             // label1
             // 
@@ -78,18 +81,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridListarTarefas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListarTarefas";
             this.Text = "ListarTarefas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListarTarefas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView gridListarTarefas;
         private Label label1;
         private Panel panel1;
         private Panel panel2;
