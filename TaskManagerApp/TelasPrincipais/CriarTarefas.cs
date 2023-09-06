@@ -7,7 +7,7 @@ namespace TaskManagerApp.TelasPrincipais
     public partial class CriarTarefas : Form
     {
         private DbTaskmanagerContext _context = new DbTaskmanagerContext();
-        string Prioridade;
+        string? Prioridade;
 
         public CriarTarefas()
         {

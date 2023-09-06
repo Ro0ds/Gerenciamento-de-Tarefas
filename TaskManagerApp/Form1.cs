@@ -63,11 +63,6 @@ namespace TaskManagerApp
             MenuEstiloHover(lbl_listarTarefa);
         }
 
-        private void lbl_detalharTarefa_MouseHover(object sender, EventArgs e)
-        {
-            MenuEstiloHover(lbl_detalharTarefa);
-        }
-
         private void lbl_editarTarefa_MouseHover(object sender, EventArgs e)
         {
             MenuEstiloHover(lbl_editarTarefa);
@@ -108,11 +103,6 @@ namespace TaskManagerApp
         private void lbl_listarTarefa_MouseLeave(object sender, EventArgs e)
         {
             MenuEstiloLeave(lbl_listarTarefa);
-        }
-
-        private void lbl_detalharTarefa_MouseLeave(object sender, EventArgs e)
-        {
-            MenuEstiloLeave(lbl_detalharTarefa);
         }
 
         private void lbl_editarTarefa_MouseLeave(object sender, EventArgs e)
@@ -172,17 +162,6 @@ namespace TaskManagerApp
             }
 
             Formulario = new ListarTarefas();
-            MostrarFormularioNaTela(Formulario);
-        }
-
-        private void lbl_detalharTarefa_Click(object sender, EventArgs e)
-        {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
-
-            Formulario = new DetalharTarefas();
             MostrarFormularioNaTela(Formulario);
         }
 

@@ -36,7 +36,6 @@
             this.lbl_configuracoes = new System.Windows.Forms.Label();
             this.lbl_statusTarefa = new System.Windows.Forms.Label();
             this.lbl_editarTarefa = new System.Windows.Forms.Label();
-            this.lbl_detalharTarefa = new System.Windows.Forms.Label();
             this.lbl_listarTarefa = new System.Windows.Forms.Label();
             this.lbl_criarTarefa = new System.Windows.Forms.Label();
             this.lbl_menuPrincipal = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             this.panel1.Controls.Add(this.lbl_configuracoes);
             this.panel1.Controls.Add(this.lbl_statusTarefa);
             this.panel1.Controls.Add(this.lbl_editarTarefa);
-            this.panel1.Controls.Add(this.lbl_detalharTarefa);
             this.panel1.Controls.Add(this.lbl_listarTarefa);
             this.panel1.Controls.Add(this.lbl_criarTarefa);
             this.panel1.Controls.Add(this.lbl_menuPrincipal);
@@ -98,7 +96,7 @@
             // 
             this.lbl_perfilUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_perfilUsuario.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_perfilUsuario.Location = new System.Drawing.Point(0, 260);
+            this.lbl_perfilUsuario.Location = new System.Drawing.Point(0, 228);
             this.lbl_perfilUsuario.Name = "lbl_perfilUsuario";
             this.lbl_perfilUsuario.Size = new System.Drawing.Size(153, 32);
             this.lbl_perfilUsuario.TabIndex = 11;
@@ -113,7 +111,7 @@
             // 
             this.lbl_configuracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_configuracoes.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_configuracoes.Location = new System.Drawing.Point(0, 228);
+            this.lbl_configuracoes.Location = new System.Drawing.Point(0, 196);
             this.lbl_configuracoes.Name = "lbl_configuracoes";
             this.lbl_configuracoes.Size = new System.Drawing.Size(153, 32);
             this.lbl_configuracoes.TabIndex = 10;
@@ -128,7 +126,7 @@
             // 
             this.lbl_statusTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_statusTarefa.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_statusTarefa.Location = new System.Drawing.Point(0, 196);
+            this.lbl_statusTarefa.Location = new System.Drawing.Point(0, 164);
             this.lbl_statusTarefa.Name = "lbl_statusTarefa";
             this.lbl_statusTarefa.Size = new System.Drawing.Size(153, 32);
             this.lbl_statusTarefa.TabIndex = 9;
@@ -143,7 +141,7 @@
             // 
             this.lbl_editarTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_editarTarefa.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_editarTarefa.Location = new System.Drawing.Point(0, 164);
+            this.lbl_editarTarefa.Location = new System.Drawing.Point(0, 132);
             this.lbl_editarTarefa.Name = "lbl_editarTarefa";
             this.lbl_editarTarefa.Size = new System.Drawing.Size(153, 32);
             this.lbl_editarTarefa.TabIndex = 8;
@@ -153,21 +151,6 @@
             this.lbl_editarTarefa.Click += new System.EventHandler(this.lbl_editarTarefa_Click);
             this.lbl_editarTarefa.MouseLeave += new System.EventHandler(this.lbl_editarTarefa_MouseLeave);
             this.lbl_editarTarefa.MouseHover += new System.EventHandler(this.lbl_editarTarefa_MouseHover);
-            // 
-            // lbl_detalharTarefa
-            // 
-            this.lbl_detalharTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_detalharTarefa.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_detalharTarefa.Location = new System.Drawing.Point(0, 132);
-            this.lbl_detalharTarefa.Name = "lbl_detalharTarefa";
-            this.lbl_detalharTarefa.Size = new System.Drawing.Size(153, 32);
-            this.lbl_detalharTarefa.TabIndex = 7;
-            this.lbl_detalharTarefa.Tag = "menu";
-            this.lbl_detalharTarefa.Text = "Detalhar Tarefas";
-            this.lbl_detalharTarefa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_detalharTarefa.Click += new System.EventHandler(this.lbl_detalharTarefa_Click);
-            this.lbl_detalharTarefa.MouseLeave += new System.EventHandler(this.lbl_detalharTarefa_MouseLeave);
-            this.lbl_detalharTarefa.MouseHover += new System.EventHandler(this.lbl_detalharTarefa_MouseHover);
             // 
             // lbl_listarTarefa
             // 
@@ -255,7 +238,6 @@
         private Label lbl_configuracoes;
         private Label lbl_statusTarefa;
         private Label lbl_editarTarefa;
-        private Label lbl_detalharTarefa;
         private Label lbl_listarTarefa;
         private Label lbl_criarTarefa;
         private Panel painel;
