@@ -14,6 +14,8 @@ namespace TaskManagerApp
         public Color CorPreta { get; set; } = Color.Black;
 
         private Form? Formulario;
+        public int LarguraPadrao { get; } = 724;
+        public int AlturaPadrao { get; } = 517;
 
         public TelaPrincipal()
         {
@@ -242,6 +244,15 @@ namespace TaskManagerApp
 
         public void MostrarFormularioNaTela(Form formulario)
         {
+            if(formulario.Name == "ListarTarefas")
+            {
+                this.Width = 1080;
+            }
+            else
+            {
+                this.Width = LarguraPadrao;
+            }
+
             formulario.IsAccessible = true;
             formulario.TopLevel = false;
             formulario.AutoScroll = true;

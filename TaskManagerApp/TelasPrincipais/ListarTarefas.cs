@@ -30,7 +30,7 @@ namespace TaskManagerApp.TelasPrincipais
 
             foreach(var item in dados)
             {
-                string situacaoTarefa = NormalizaSituacaoTarefa(item.SituacaoTarefa);
+                string situacaoTarefa = NormalizaSituacaoTarefa(item.SituacaoTarefa, item.DataVencimentoTarefa);
 
                 tabela.Rows.Add(item.CodTarefa, TelaPrincipal.UsuarioConectado, item.NomeTarefa, item.DescricaoTarefa, item.DataVencimentoTarefa, situacaoTarefa, item.CriadaEm);
             }
@@ -38,21 +38,21 @@ namespace TaskManagerApp.TelasPrincipais
             gridListarTarefas.DataSource = tabela;
         }
 
-        public string NormalizaSituacaoTarefa(int situacaoTarefa)
+        public string NormalizaSituacaoTarefa(int situacaoTarefa, DateTime? dataVencimento)
         {
             string situacaoTarefaNormalizada = string.Empty;
 
-            if(situacaoTarefa == (int)SituacaoTarefa.Criada)
+            if(situacaoTarefa == (int)SituacaoTarefa.Finalizada || DateTime.Now >= dataVencimento)
+            {
+                situacaoTarefaNormalizada = "Finalizada";
+            }
+            else if(situacaoTarefa == (int)SituacaoTarefa.Criada)
             {
                 situacaoTarefaNormalizada = "Criada";
             }
             else if(situacaoTarefa == (int)SituacaoTarefa.EmAndamento)
             {
                 situacaoTarefaNormalizada = "Em andamento";
-            }
-            else if(situacaoTarefa == (int)SituacaoTarefa.Finalizada)
-            {
-                situacaoTarefaNormalizada = "Finalizada";
             }
 
             return situacaoTarefaNormalizada;
