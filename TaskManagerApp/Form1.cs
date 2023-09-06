@@ -134,10 +134,7 @@ namespace TaskManagerApp
         #region MouseClick
         private void lbl_menuPrincipal_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new MenuPrincipal();
             MostrarFormularioNaTela(Formulario);
@@ -145,10 +142,7 @@ namespace TaskManagerApp
 
         private void lbl_criarTarefa_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new CriarTarefas();
             MostrarFormularioNaTela(Formulario);
@@ -156,10 +150,7 @@ namespace TaskManagerApp
 
         private void lbl_listarTarefa_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new ListarTarefas();
             MostrarFormularioNaTela(Formulario);
@@ -167,10 +158,7 @@ namespace TaskManagerApp
 
         private void lbl_editarTarefa_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new EditarTarefas();
             MostrarFormularioNaTela(Formulario);
@@ -178,10 +166,7 @@ namespace TaskManagerApp
 
         private void lbl_statusTarefa_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new StatusTarefas();
             MostrarFormularioNaTela(Formulario);
@@ -189,10 +174,7 @@ namespace TaskManagerApp
 
         private void lbl_configuracoes_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new Configuracoes();
             MostrarFormularioNaTela(Formulario);
@@ -200,10 +182,7 @@ namespace TaskManagerApp
 
         private void lbl_perfilUsuario_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
             Formulario = new PerfilUsuario();
             MostrarFormularioNaTela(Formulario);
@@ -211,12 +190,9 @@ namespace TaskManagerApp
 
         private void lbl_administrador_Click(object sender, EventArgs e)
         {
-            if(Formulario != null)
-            {
-                LiberaTela();
-            }
+            LiberaTela();
 
-            Formulario = new MenuPrincipal();
+            Formulario = new PainelAdministrador();
             MostrarFormularioNaTela(Formulario);
         }
         #endregion
@@ -226,10 +202,17 @@ namespace TaskManagerApp
             if(formulario.Name == "ListarTarefas")
             {
                 this.Width = 1080;
+                this.Height = AlturaPadrao;
+            }
+            else if(formulario.Name == "PainelAdministrador")
+            {
+                this.Width = 1080;
+                this.Height = 720;
             }
             else
             {
                 this.Width = LarguraPadrao;
+                this.Height = AlturaPadrao;
             }
 
             formulario.IsAccessible = true;
@@ -243,7 +226,10 @@ namespace TaskManagerApp
 
         public void LiberaTela()
         {
-            Formulario.Close();
+            if(Formulario != null)
+            {
+                Formulario.Close();
+            }
         }
 
         // Debug - desativar depois
