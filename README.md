@@ -3,5 +3,5 @@
 
 ### Sendo contruído para fins de estudos!
 
-## Linguagem: C#
+## Linguagem: C# + Windows Forms
 ## Banco de Dados: MySQL
