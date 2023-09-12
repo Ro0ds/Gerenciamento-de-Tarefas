@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if(disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -72,6 +72,7 @@
             txt_nomeCompleto.PlaceholderText = "digite o nome completo";
             txt_nomeCompleto.Size = new Size(355, 32);
             txt_nomeCompleto.TabIndex = 2;
+            txt_nomeCompleto.Tag = "campoObrigatorio";
             // 
             // txt_nomeUsuario
             // 
@@ -81,6 +82,7 @@
             txt_nomeUsuario.PlaceholderText = "digite um nome de usuário";
             txt_nomeUsuario.Size = new Size(355, 32);
             txt_nomeUsuario.TabIndex = 4;
+            txt_nomeUsuario.Tag = "campoObrigatorio";
             // 
             // label2
             // 
@@ -100,6 +102,7 @@
             txt_email.PlaceholderText = "digite um e-mail válido";
             txt_email.Size = new Size(355, 32);
             txt_email.TabIndex = 6;
+            txt_email.Tag = "campoObrigatorio";
             // 
             // label3
             // 
@@ -119,6 +122,7 @@
             txt_senha.PlaceholderText = "escolha uma senha segura";
             txt_senha.Size = new Size(355, 32);
             txt_senha.TabIndex = 8;
+            txt_senha.Tag = "campoObrigatorio";
             txt_senha.UseSystemPasswordChar = true;
             // 
             // label4
@@ -139,6 +143,7 @@
             txt_dicaSenha.PlaceholderText = "dica para o usuário conseguir logar";
             txt_dicaSenha.Size = new Size(355, 32);
             txt_dicaSenha.TabIndex = 10;
+            txt_dicaSenha.Tag = "campoObrigatorio";
             // 
             // label5
             // 
@@ -170,6 +175,7 @@
             cb_grupoPermissao.Name = "cb_grupoPermissao";
             cb_grupoPermissao.Size = new Size(355, 23);
             cb_grupoPermissao.TabIndex = 12;
+            cb_grupoPermissao.Tag = "campoObrigatorio";
             // 
             // AdicionarUsuario
             // 

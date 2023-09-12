@@ -30,9 +30,12 @@ namespace TaskManagerApp.TelasPrincipais
 
             foreach(var item in dados)
             {
-                string situacaoTarefa = NormalizaSituacaoTarefa(item.SituacaoTarefa, item.DataVencimentoTarefa);
+                if(item.CodUsuario == TelaPrincipal.CodUsuarioConectado)
+                {
+                    string situacaoTarefa = NormalizaSituacaoTarefa(item.SituacaoTarefa, item.DataVencimentoTarefa);
 
-                tabela.Rows.Add(item.CodTarefa, TelaPrincipal.UsuarioConectado, item.NomeTarefa, item.DescricaoTarefa, item.DataVencimentoTarefa, situacaoTarefa, item.CriadaEm);
+                    tabela.Rows.Add(item.CodTarefa, TelaPrincipal.UsuarioConectado, item.NomeTarefa, item.DescricaoTarefa, item.DataVencimentoTarefa, situacaoTarefa, item.CriadaEm);
+                }
             }
 
             gridListarTarefas.DataSource = tabela;

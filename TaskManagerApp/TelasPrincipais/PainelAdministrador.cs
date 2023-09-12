@@ -1,5 +1,4 @@
-﻿using System;
-using TaskManagerApp.TelasAdministrador;
+﻿using TaskManagerApp.TelasAdministrador;
 
 namespace TaskManagerApp.TelasPrincipais
 {
