@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if(disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -31,8 +31,8 @@
             menuSuperior = new MenuStrip();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             menuAdicionarUsuario = new ToolStripMenuItem();
-            editarToolStripMenuItem1 = new ToolStripMenuItem();
-            excluirToolStripMenuItem = new ToolStripMenuItem();
+            menuEditarUsuario = new ToolStripMenuItem();
+            menuExcluirUsuario = new ToolStripMenuItem();
             tarefasToolStripMenuItem = new ToolStripMenuItem();
             visualizarToolStripMenuItem = new ToolStripMenuItem();
             excluirToolStripMenuItem1 = new ToolStripMenuItem();
@@ -54,7 +54,7 @@
             // 
             // usuáriosToolStripMenuItem
             // 
-            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuAdicionarUsuario, editarToolStripMenuItem1, excluirToolStripMenuItem });
+            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuAdicionarUsuario, menuEditarUsuario, menuExcluirUsuario });
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
             usuáriosToolStripMenuItem.Size = new Size(64, 20);
             usuáriosToolStripMenuItem.Text = "Usuários";
@@ -62,21 +62,22 @@
             // menuAdicionarUsuario
             // 
             menuAdicionarUsuario.Name = "menuAdicionarUsuario";
-            menuAdicionarUsuario.Size = new Size(125, 22);
+            menuAdicionarUsuario.Size = new Size(180, 22);
             menuAdicionarUsuario.Text = "Adicionar";
             menuAdicionarUsuario.Click += menuAdicionarUsuario_Click;
             // 
-            // editarToolStripMenuItem1
+            // menuEditarUsuario
             // 
-            editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            editarToolStripMenuItem1.Size = new Size(125, 22);
-            editarToolStripMenuItem1.Text = "Editar";
+            menuEditarUsuario.Name = "menuEditarUsuario";
+            menuEditarUsuario.Size = new Size(180, 22);
+            menuEditarUsuario.Text = "Editar";
+            menuEditarUsuario.Click += menuEditarUsuario_Click;
             // 
-            // excluirToolStripMenuItem
+            // menuExcluirUsuario
             // 
-            excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            excluirToolStripMenuItem.Size = new Size(125, 22);
-            excluirToolStripMenuItem.Text = "Excluir";
+            menuExcluirUsuario.Name = "menuExcluirUsuario";
+            menuExcluirUsuario.Size = new Size(180, 22);
+            menuExcluirUsuario.Text = "Excluir";
             // 
             // tarefasToolStripMenuItem
             // 
@@ -145,8 +146,8 @@
         private MenuStrip menuSuperior;
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripMenuItem menuAdicionarUsuario;
-        private ToolStripMenuItem editarToolStripMenuItem1;
-        private ToolStripMenuItem excluirToolStripMenuItem;
+        private ToolStripMenuItem menuEditarUsuario;
+        private ToolStripMenuItem menuExcluirUsuario;
         private ToolStripMenuItem tarefasToolStripMenuItem;
         private ToolStripMenuItem visualizarToolStripMenuItem;
         private ToolStripMenuItem excluirToolStripMenuItem1;

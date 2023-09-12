@@ -19,6 +19,14 @@ namespace TaskManagerApp.TelasPrincipais
             MostrarFormularioAdministrativo(Formulario);
         }
 
+        private void menuEditarUsuario_Click(object sender, EventArgs e)
+        {
+            LiberaTela();
+
+            Formulario = new EditarUsuario();
+            MostrarFormularioAdministrativo(Formulario);
+        }
+
         public void MostrarFormularioAdministrativo(Form formulario)
         {
             formulario.IsAccessible = true;
@@ -31,7 +39,7 @@ namespace TaskManagerApp.TelasPrincipais
 
         public void LiberaTela()
         {
-            if (Formulario != null)
+            if(Formulario != null)
             {
                 Formulario.Close();
             }

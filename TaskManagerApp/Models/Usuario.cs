@@ -19,4 +19,17 @@ public partial class Usuario
     public string? GrupoPermissao { get; set; }
 
     public virtual ICollection<Tarefa> Tarefas { get; set; } = new List<Tarefa>();
+
+    public Usuario() { }
+
+    public Usuario(Usuario outroUsuario)
+    {
+        this.NomeCompleto = outroUsuario.NomeCompleto;
+        this.NomeUsuario = outroUsuario.NomeUsuario;
+        this.EmailUsuario = outroUsuario.EmailUsuario;
+        this.SenhaUsuario = outroUsuario.SenhaUsuario;
+        this.SaltSenhaUsuario = outroUsuario.SaltSenhaUsuario;
+        this.DicaSenha = outroUsuario.DicaSenha;
+        this.GrupoPermissao = outroUsuario.GrupoPermissao;
+    }
 }
