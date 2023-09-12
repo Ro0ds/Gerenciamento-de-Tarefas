@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TaskManagerApp.Models;
+﻿namespace TaskManagerApp.Models;
 
 public partial class Usuario
 {

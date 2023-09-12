@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TaskManagerApp.Models;
 
 public partial class DbTaskmanagerContext : DbContext
 {
-    public DbTaskmanagerContext()
-    {
-    }
+    public DbTaskmanagerContext() { }
 
     public DbTaskmanagerContext(DbContextOptions<DbTaskmanagerContext> options)
-        : base(options)
-    {
-    }
+        : base(options) { }
 
     public virtual DbSet<Tarefa> Tarefas { get; set; }
 

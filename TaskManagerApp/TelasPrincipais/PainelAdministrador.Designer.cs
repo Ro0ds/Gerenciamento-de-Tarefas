@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if(disposing && (components != null))
+            if (disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -28,127 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuSuperior = new System.Windows.Forms.MenuStrip();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAdicionarUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bancoDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.painelSecundario = new System.Windows.Forms.Panel();
-            this.menuSuperior.SuspendLayout();
-            this.SuspendLayout();
+            menuSuperior = new MenuStrip();
+            usuáriosToolStripMenuItem = new ToolStripMenuItem();
+            menuAdicionarUsuario = new ToolStripMenuItem();
+            editarToolStripMenuItem1 = new ToolStripMenuItem();
+            excluirToolStripMenuItem = new ToolStripMenuItem();
+            tarefasToolStripMenuItem = new ToolStripMenuItem();
+            visualizarToolStripMenuItem = new ToolStripMenuItem();
+            excluirToolStripMenuItem1 = new ToolStripMenuItem();
+            excluirToolStripMenuItem2 = new ToolStripMenuItem();
+            bancoDeDadosToolStripMenuItem = new ToolStripMenuItem();
+            configurarToolStripMenuItem = new ToolStripMenuItem();
+            painelSecundario = new Panel();
+            menuSuperior.SuspendLayout();
+            SuspendLayout();
             // 
             // menuSuperior
             // 
-            this.menuSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem,
-            this.tarefasToolStripMenuItem,
-            this.bancoDeDadosToolStripMenuItem});
-            this.menuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.menuSuperior.Name = "menuSuperior";
-            this.menuSuperior.Size = new System.Drawing.Size(1080, 24);
-            this.menuSuperior.TabIndex = 0;
-            this.menuSuperior.Text = "menuStrip1";
+            menuSuperior.Items.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem, tarefasToolStripMenuItem, bancoDeDadosToolStripMenuItem });
+            menuSuperior.Location = new Point(0, 0);
+            menuSuperior.Name = "menuSuperior";
+            menuSuperior.Size = new Size(1080, 24);
+            menuSuperior.TabIndex = 0;
+            menuSuperior.Text = "menuStrip1";
             // 
             // usuáriosToolStripMenuItem
             // 
-            this.usuáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAdicionarUsuario,
-            this.editarToolStripMenuItem1,
-            this.excluirToolStripMenuItem});
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuáriosToolStripMenuItem.Text = "Usuários";
+            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuAdicionarUsuario, editarToolStripMenuItem1, excluirToolStripMenuItem });
+            usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            usuáriosToolStripMenuItem.Size = new Size(64, 20);
+            usuáriosToolStripMenuItem.Text = "Usuários";
             // 
             // menuAdicionarUsuario
             // 
-            this.menuAdicionarUsuario.Name = "menuAdicionarUsuario";
-            this.menuAdicionarUsuario.Size = new System.Drawing.Size(125, 22);
-            this.menuAdicionarUsuario.Text = "Adicionar";
-            this.menuAdicionarUsuario.Click += new System.EventHandler(this.menuAdicionarUsuario_Click);
+            menuAdicionarUsuario.Name = "menuAdicionarUsuario";
+            menuAdicionarUsuario.Size = new Size(125, 22);
+            menuAdicionarUsuario.Text = "Adicionar";
+            menuAdicionarUsuario.Click += menuAdicionarUsuario_Click;
             // 
             // editarToolStripMenuItem1
             // 
-            this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.editarToolStripMenuItem1.Text = "Editar";
+            editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
+            editarToolStripMenuItem1.Size = new Size(125, 22);
+            editarToolStripMenuItem1.Text = "Editar";
             // 
             // excluirToolStripMenuItem
             // 
-            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.excluirToolStripMenuItem.Text = "Excluir";
+            excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            excluirToolStripMenuItem.Size = new Size(125, 22);
+            excluirToolStripMenuItem.Text = "Excluir";
             // 
             // tarefasToolStripMenuItem
             // 
-            this.tarefasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizarToolStripMenuItem,
-            this.excluirToolStripMenuItem1,
-            this.excluirToolStripMenuItem2});
-            this.tarefasToolStripMenuItem.Name = "tarefasToolStripMenuItem";
-            this.tarefasToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.tarefasToolStripMenuItem.Text = "Tarefas";
+            tarefasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarToolStripMenuItem, excluirToolStripMenuItem1, excluirToolStripMenuItem2 });
+            tarefasToolStripMenuItem.Name = "tarefasToolStripMenuItem";
+            tarefasToolStripMenuItem.Size = new Size(55, 20);
+            tarefasToolStripMenuItem.Text = "Tarefas";
             // 
             // visualizarToolStripMenuItem
             // 
-            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            visualizarToolStripMenuItem.Size = new Size(123, 22);
+            visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // excluirToolStripMenuItem1
             // 
-            this.excluirToolStripMenuItem1.Name = "excluirToolStripMenuItem1";
-            this.excluirToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
-            this.excluirToolStripMenuItem1.Text = "Editar";
+            excluirToolStripMenuItem1.Name = "excluirToolStripMenuItem1";
+            excluirToolStripMenuItem1.Size = new Size(123, 22);
+            excluirToolStripMenuItem1.Text = "Editar";
             // 
             // excluirToolStripMenuItem2
             // 
-            this.excluirToolStripMenuItem2.Name = "excluirToolStripMenuItem2";
-            this.excluirToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
-            this.excluirToolStripMenuItem2.Text = "Excluir";
+            excluirToolStripMenuItem2.Name = "excluirToolStripMenuItem2";
+            excluirToolStripMenuItem2.Size = new Size(123, 22);
+            excluirToolStripMenuItem2.Text = "Excluir";
             // 
             // bancoDeDadosToolStripMenuItem
             // 
-            this.bancoDeDadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configurarToolStripMenuItem});
-            this.bancoDeDadosToolStripMenuItem.Name = "bancoDeDadosToolStripMenuItem";
-            this.bancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.bancoDeDadosToolStripMenuItem.Text = "Banco de Dados";
+            bancoDeDadosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configurarToolStripMenuItem });
+            bancoDeDadosToolStripMenuItem.Name = "bancoDeDadosToolStripMenuItem";
+            bancoDeDadosToolStripMenuItem.Size = new Size(104, 20);
+            bancoDeDadosToolStripMenuItem.Text = "Banco de Dados";
             // 
             // configurarToolStripMenuItem
             // 
-            this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
-            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.configurarToolStripMenuItem.Text = "Configurar";
+            configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
+            configurarToolStripMenuItem.Size = new Size(131, 22);
+            configurarToolStripMenuItem.Text = "Configurar";
             // 
             // painelSecundario
             // 
-            this.painelSecundario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelSecundario.Location = new System.Drawing.Point(0, 24);
-            this.painelSecundario.Name = "painelSecundario";
-            this.painelSecundario.Size = new System.Drawing.Size(1080, 696);
-            this.painelSecundario.TabIndex = 1;
+            painelSecundario.Dock = DockStyle.Fill;
+            painelSecundario.Location = new Point(0, 24);
+            painelSecundario.Name = "painelSecundario";
+            painelSecundario.Size = new Size(1080, 696);
+            painelSecundario.TabIndex = 1;
             // 
             // PainelAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 720);
-            this.Controls.Add(this.painelSecundario);
-            this.Controls.Add(this.menuSuperior);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuSuperior;
-            this.Name = "PainelAdministrador";
-            this.menuSuperior.ResumeLayout(false);
-            this.menuSuperior.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1080, 720);
+            Controls.Add(painelSecundario);
+            Controls.Add(menuSuperior);
+            FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menuSuperior;
+            Name = "PainelAdministrador";
+            menuSuperior.ResumeLayout(false);
+            menuSuperior.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

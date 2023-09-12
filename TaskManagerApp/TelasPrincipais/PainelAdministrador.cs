@@ -32,7 +32,7 @@ namespace TaskManagerApp.TelasPrincipais
 
         public void LiberaTela()
         {
-            if(Formulario != null)
+            if (Formulario != null)
             {
                 Formulario.Close();
             }

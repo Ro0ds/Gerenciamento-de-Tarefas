@@ -235,8 +235,8 @@ namespace TaskManagerApp
         // Debug - desativar depois
         private void lbl_title_Click(object sender, EventArgs e)
         {
-            var forms = string.Join(',', Formulario.Name);
-            MessageBox.Show($"Forms abertos: {Application.OpenForms.Count}\nForms: {forms}");
+            //var forms = string.Join(',', Formulario.Name);
+            //MessageBox.Show($"Forms abertos: {Application.OpenForms.Count}\nForms: {forms}");
         }
 
         public static void UsuarioAdministrador(bool usuarioAdministrador)

@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if(disposing && (components != null))
+            if (disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -28,189 +28,188 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_nomeCompleto = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
+            btn_adicionar = new Button();
+            label1 = new Label();
+            txt_nomeCompleto = new TextBox();
+            txt_nomeUsuario = new TextBox();
+            label2 = new Label();
+            txt_email = new TextBox();
+            label3 = new Label();
+            txt_senha = new TextBox();
+            label4 = new Label();
+            txt_dicaSenha = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            cb_grupoPermissao = new ComboBox();
+            SuspendLayout();
             // 
-            // button1
+            // btn_adicionar
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(541, 639);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(369, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            btn_adicionar.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_adicionar.Location = new Point(84, 455);
+            btn_adicionar.Name = "btn_adicionar";
+            btn_adicionar.Size = new Size(744, 44);
+            btn_adicionar.TabIndex = 0;
+            btn_adicionar.Text = "Adicionar";
+            btn_adicionar.UseVisualStyleBackColor = true;
+            btn_adicionar.Click += btn_adicionar_Click;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(325, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome Completo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(84, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(197, 41);
+            label1.TabIndex = 1;
+            label1.Text = "Nome Completo";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txt_nomeCompleto
             // 
-            this.txt_nomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_nomeCompleto.Location = new System.Drawing.Point(325, 80);
-            this.txt_nomeCompleto.Name = "txt_nomeCompleto";
-            this.txt_nomeCompleto.PlaceholderText = "digite o nome completo";
-            this.txt_nomeCompleto.Size = new System.Drawing.Size(369, 32);
-            this.txt_nomeCompleto.TabIndex = 2;
+            txt_nomeCompleto.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_nomeCompleto.Location = new Point(84, 155);
+            txt_nomeCompleto.Name = "txt_nomeCompleto";
+            txt_nomeCompleto.PlaceholderText = "digite o nome completo";
+            txt_nomeCompleto.Size = new Size(355, 32);
+            txt_nomeCompleto.TabIndex = 2;
             // 
-            // textBox1
+            // txt_nomeUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(325, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "digite um nome de usuário";
-            this.textBox1.Size = new System.Drawing.Size(369, 32);
-            this.textBox1.TabIndex = 4;
+            txt_nomeUsuario.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_nomeUsuario.Location = new Point(473, 155);
+            txt_nomeUsuario.Name = "txt_nomeUsuario";
+            txt_nomeUsuario.PlaceholderText = "digite um nome de usuário";
+            txt_nomeUsuario.Size = new Size(355, 32);
+            txt_nomeUsuario.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(325, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(369, 41);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nome de Usuário";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(473, 111);
+            label2.Name = "label2";
+            label2.Size = new Size(197, 41);
+            label2.TabIndex = 3;
+            label2.Text = "Nome de Usuário";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txt_email
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(325, 238);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "digite um e-mail válido";
-            this.textBox2.Size = new System.Drawing.Size(369, 32);
-            this.textBox2.TabIndex = 6;
+            txt_email.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_email.Location = new Point(84, 266);
+            txt_email.Name = "txt_email";
+            txt_email.PlaceholderText = "digite um e-mail válido";
+            txt_email.Size = new Size(355, 32);
+            txt_email.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(325, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(369, 41);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "E-mail";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label3.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(84, 222);
+            label3.Name = "label3";
+            label3.Size = new Size(197, 41);
+            label3.TabIndex = 5;
+            label3.Text = "E-mail";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // txt_senha
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(325, 317);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "escolha uma senha segura";
-            this.textBox3.Size = new System.Drawing.Size(369, 32);
-            this.textBox3.TabIndex = 8;
+            txt_senha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_senha.Location = new Point(473, 266);
+            txt_senha.Name = "txt_senha";
+            txt_senha.PlaceholderText = "escolha uma senha segura";
+            txt_senha.Size = new Size(355, 32);
+            txt_senha.TabIndex = 8;
+            txt_senha.UseSystemPasswordChar = true;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(325, 273);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(369, 41);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Senha";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label4.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(473, 222);
+            label4.Name = "label4";
+            label4.Size = new Size(197, 41);
+            label4.TabIndex = 7;
+            label4.Text = "Senha";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // txt_dicaSenha
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(325, 396);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "dica para o usuário conseguir logar";
-            this.textBox4.Size = new System.Drawing.Size(369, 32);
-            this.textBox4.TabIndex = 10;
+            txt_dicaSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_dicaSenha.Location = new Point(84, 383);
+            txt_dicaSenha.Name = "txt_dicaSenha";
+            txt_dicaSenha.PlaceholderText = "dica para o usuário conseguir logar";
+            txt_dicaSenha.Size = new Size(355, 32);
+            txt_dicaSenha.TabIndex = 10;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(325, 352);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(369, 41);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Dica de Senha";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label5.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(84, 339);
+            label5.Name = "label5";
+            label5.Size = new Size(197, 41);
+            label5.TabIndex = 9;
+            label5.Text = "Dica de Senha";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(325, 431);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(369, 41);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Grupo Permissão";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label6.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(473, 348);
+            label6.Name = "label6";
+            label6.Size = new Size(197, 41);
+            label6.TabIndex = 11;
+            label6.Text = "Grupo Permissão";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // cb_grupoPermissao
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "USUARIO",
-            "ADMINISTRADOR"});
-            this.comboBox1.Location = new System.Drawing.Point(325, 475);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(369, 23);
-            this.comboBox1.TabIndex = 12;
+            cb_grupoPermissao.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cb_grupoPermissao.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cb_grupoPermissao.FormattingEnabled = true;
+            cb_grupoPermissao.Items.AddRange(new object[] { "USUARIO", "ADMINISTRADOR" });
+            cb_grupoPermissao.Location = new Point(473, 392);
+            cb_grupoPermissao.Name = "cb_grupoPermissao";
+            cb_grupoPermissao.Size = new Size(355, 23);
+            cb_grupoPermissao.TabIndex = 12;
             // 
             // AdicionarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 695);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_nomeCompleto);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdicionarUsuario";
-            this.Text = "AdicionarUsuario";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(908, 613);
+            Controls.Add(cb_grupoPermissao);
+            Controls.Add(label6);
+            Controls.Add(txt_dicaSenha);
+            Controls.Add(label5);
+            Controls.Add(txt_senha);
+            Controls.Add(label4);
+            Controls.Add(txt_email);
+            Controls.Add(label3);
+            Controls.Add(txt_nomeUsuario);
+            Controls.Add(label2);
+            Controls.Add(txt_nomeCompleto);
+            Controls.Add(label1);
+            Controls.Add(btn_adicionar);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "AdicionarUsuario";
+            Text = "AdicionarUsuario";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button btn_adicionar;
         private Label label1;
         private TextBox txt_nomeCompleto;
-        private TextBox textBox1;
+        private TextBox txt_nomeUsuario;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txt_email;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txt_senha;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txt_dicaSenha;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox cb_grupoPermissao;
     }
 }

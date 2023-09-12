@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TaskManagerApp.TelasAdministrador
+﻿namespace TaskManagerApp.TelasAdministrador
 {
     public partial class AdicionarUsuario : Form
     {
         public AdicionarUsuario()
         {
             InitializeComponent();
+        }
+
+        private void btn_adicionar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{this.Size.Width};{this.Size.Height}");
         }
     }
 }
