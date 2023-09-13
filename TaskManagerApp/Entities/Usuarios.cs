@@ -1,4 +1,5 @@
-﻿using TaskManagerApp.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using TaskManagerApp.Models;
 using TaskManagerApp.Seguranca;
 
 namespace TaskManagerApp.Entities
@@ -22,15 +23,23 @@ namespace TaskManagerApp.Entities
             {
                 if(SenhaEstaCorreta(usuario, senha))
                 {
-                    string? nomeCompleto = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.NomeCompleto).FirstOrDefault();
-                    int idUsuario = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.CodUsuario).FirstOrDefault();
+                    if(UsuarioAtivo(usuario))
+                    {
+                        string? nomeCompleto = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.NomeCompleto).FirstOrDefault();
+                        int idUsuario = _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.CodUsuario).FirstOrDefault();
 
-                    MessageBox.Show($"Bem vindo(a) {nomeCompleto}!", "Login realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Bem vindo(a) {nomeCompleto}!", "Login realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    TelaPrincipal.UsuarioAdministrador(_context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.GrupoPermissao == "ADMINISTRADOR").FirstOrDefault());
-                    TelaPrincipal.InformacoesDeUsuario(nomeCompleto, idUsuario);
+                        TelaPrincipal.UsuarioAdministrador(_context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.GrupoPermissao == "ADMINISTRADOR").FirstOrDefault());
+                        TelaPrincipal.InformacoesDeUsuario(nomeCompleto, idUsuario);
 
-                    return true;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário está inativo, entre em contato com o administrador do sistema.", "Usuário inativo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
                 else
                 {
@@ -63,7 +72,7 @@ namespace TaskManagerApp.Entities
 
         private bool UsuarioAtivo(string usuario)
         {
-            return _context.Usuarios.Where(u => u.NomeUsuario == usuario).Select(u => u.UsuarioAtivo == true).Any();
+            return _context.Usuarios.Where(u => u.NomeUsuario == usuario).Any(u => u.UsuarioAtivo == true);
         }
     }
 }
