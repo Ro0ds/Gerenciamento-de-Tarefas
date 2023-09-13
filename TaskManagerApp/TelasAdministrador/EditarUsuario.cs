@@ -8,7 +8,6 @@ namespace TaskManagerApp.TelasAdministrador
     {
         private DbTaskmanagerContext _context = new DbTaskmanagerContext();
         private int CodUsuario { get; set; }
-        private Usuario? usuario { get; set; }
 
         public EditarUsuario()
         {
@@ -44,7 +43,7 @@ namespace TaskManagerApp.TelasAdministrador
 
                     if(codigos.Contains(CodUsuario))
                     {
-                        usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.CodUsuario == CodUsuario);
+                        Usuario? usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.CodUsuario == CodUsuario);
 
                         PreencheCampos(usuario);
                         HabilitaCampos();
@@ -64,23 +63,24 @@ namespace TaskManagerApp.TelasAdministrador
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            Usuario? usuarioOriginal = usuario;
-            Usuario? usuarioModificado = new Usuario(MontarInformacoesDeUsuario(usuarioOriginal));
-            
-            if(QuantidadeDeMudancas(usuarioModificado) > 0)
+            Usuario? usuarioOriginal = _context.Usuarios.FirstOrDefault(usuario => usuario.CodUsuario == CodUsuario);
+            Usuario? usuarioModificado = MontarInformacoesDeUsuario(usuarioOriginal);
+
+            if(QuantidadeDeMudancas(usuarioOriginal) > 0)
             {
                 try
                 {
+                    _context.Entry(usuarioOriginal).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
                     _context.Usuarios.Update(usuarioModificado);
                     _context.SaveChanges();
+
+                    MessageBox.Show("Usuário modificado com sucesso!", "Modificar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show($"Não foi possível modificar o usuário selecionado.\nErro:{ex.Message}", "Modificar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                MessageBox.Show("Usuário modificado com sucesso!", "Modificar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -95,32 +95,34 @@ namespace TaskManagerApp.TelasAdministrador
                 txt_nomeCompleto.Text = usuario.NomeCompleto;
                 txt_nomeUsuario.Text = usuario.NomeUsuario;
                 txt_email.Text = usuario.EmailUsuario;
-                txt_senha.Text = usuario.SenhaUsuario;
+                txt_senha.Text = string.Empty;
                 txt_dicaSenha.Text = usuario.DicaSenha;
                 cb_grupoPermissao.Text = usuario.GrupoPermissao;
             }
         }
 
-        private Usuario MontarInformacoesDeUsuario(Usuario usuario)
+        private Usuario MontarInformacoesDeUsuario(Usuario usuarioNovo)
         {
-            if(usuario != null)
+            if(usuarioNovo != null)
             {
+                usuarioNovo = new Usuario();
                 Senhas senhas = new Senhas();
 
-                usuario.NomeCompleto = txt_nomeCompleto.Text;
-                usuario.NomeUsuario = txt_nomeUsuario.Text;
-                usuario.EmailUsuario = txt_email.Text;
-                usuario.DicaSenha = txt_dicaSenha.Text;
-                usuario.GrupoPermissao = cb_grupoPermissao.Text;
+                usuarioNovo.CodUsuario = CodUsuario;
+                usuarioNovo.NomeCompleto = txt_nomeCompleto.Text;
+                usuarioNovo.NomeUsuario = txt_nomeUsuario.Text;
+                usuarioNovo.EmailUsuario = txt_email.Text;
+                usuarioNovo.DicaSenha = txt_dicaSenha.Text;
+                usuarioNovo.GrupoPermissao = cb_grupoPermissao.Text;
 
-                if(usuario.SenhaUsuario != txt_senha.Text)
+                if(!string.IsNullOrEmpty(txt_senha.Text))
                 {
-                    usuario.SenhaUsuario = senhas.CriptografarSenha(txt_senha.Text, out byte[] salt);
-                    usuario.SaltSenhaUsuario = salt;
+                    usuarioNovo.SenhaUsuario = senhas.CriptografarSenha(txt_senha.Text, out byte[] salt);
+                    usuarioNovo.SaltSenhaUsuario = salt;
                 }
             }
 
-            return usuario;
+            return usuarioNovo;
         }
 
         private int QuantidadeDeMudancas(Usuario usuario)
