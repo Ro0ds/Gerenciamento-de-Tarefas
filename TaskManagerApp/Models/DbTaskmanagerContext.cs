@@ -91,6 +91,9 @@ public partial class DbTaskmanagerContext : DbContext
             entity.Property(e => e.SenhaUsuario)
                 .HasMaxLength(255)
                 .HasColumnName("SENHA_USUARIO");
+            entity.Property(e => e.UsuarioAtivo)
+                .HasDefaultValueSql("TRUE")
+                .HasColumnName("USUARIO_ATIVO");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -120,6 +120,15 @@ namespace TaskManagerApp.TelasAdministrador
                     usuarioNovo.SenhaUsuario = senhas.CriptografarSenha(txt_senha.Text, out byte[] salt);
                     usuarioNovo.SaltSenhaUsuario = salt;
                 }
+
+                if(ckb_status.CheckState == CheckState.Checked)
+                {
+                    usuarioNovo.UsuarioAtivo = true;
+                }
+                else if(ckb_status.CheckState == CheckState.Unchecked)
+                {
+                    usuarioNovo.UsuarioAtivo = false;
+                }
             }
 
             return usuarioNovo;

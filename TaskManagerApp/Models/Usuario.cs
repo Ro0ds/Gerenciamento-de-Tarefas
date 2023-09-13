@@ -17,6 +17,7 @@ public partial class Usuario
     public string? DicaSenha { get; set; }
 
     public string? GrupoPermissao { get; set; }
+    public bool? UsuarioAtivo { get; set; }
 
     public virtual ICollection<Tarefa> Tarefas { get; set; } = new List<Tarefa>();
 

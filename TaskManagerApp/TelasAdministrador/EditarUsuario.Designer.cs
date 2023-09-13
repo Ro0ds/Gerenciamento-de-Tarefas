@@ -45,6 +45,8 @@
             txt_codUsuario = new TextBox();
             label7 = new Label();
             btn_mudar = new Button();
+            label8 = new Label();
+            ckb_status = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)gridUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             cb_grupoPermissao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cb_grupoPermissao.FormattingEnabled = true;
             cb_grupoPermissao.Items.AddRange(new object[] { "USUARIO", "ADMINISTRADOR" });
-            cb_grupoPermissao.Location = new Point(588, 316);
+            cb_grupoPermissao.Location = new Point(586, 384);
             cb_grupoPermissao.Name = "cb_grupoPermissao";
             cb_grupoPermissao.Size = new Size(259, 28);
             cb_grupoPermissao.TabIndex = 7;
@@ -79,7 +81,7 @@
             // label6
             // 
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(588, 272);
+            label6.Location = new Point(586, 340);
             label6.Name = "label6";
             label6.Size = new Size(197, 41);
             label6.TabIndex = 24;
@@ -90,7 +92,7 @@
             // 
             txt_dicaSenha.Enabled = false;
             txt_dicaSenha.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_dicaSenha.Location = new Point(315, 316);
+            txt_dicaSenha.Location = new Point(313, 384);
             txt_dicaSenha.Name = "txt_dicaSenha";
             txt_dicaSenha.PlaceholderText = "dica para o usuário conseguir logar";
             txt_dicaSenha.Size = new Size(259, 26);
@@ -100,7 +102,7 @@
             // label5
             // 
             label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(315, 272);
+            label5.Location = new Point(313, 340);
             label5.Name = "label5";
             label5.Size = new Size(197, 41);
             label5.TabIndex = 22;
@@ -111,7 +113,7 @@
             // 
             txt_senha.Enabled = false;
             txt_senha.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_senha.Location = new Point(588, 243);
+            txt_senha.Location = new Point(586, 311);
             txt_senha.Name = "txt_senha";
             txt_senha.PlaceholderText = "escolha uma senha segura";
             txt_senha.Size = new Size(259, 26);
@@ -122,7 +124,7 @@
             // label4
             // 
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(588, 199);
+            label4.Location = new Point(586, 267);
             label4.Name = "label4";
             label4.Size = new Size(197, 41);
             label4.TabIndex = 20;
@@ -133,7 +135,7 @@
             // 
             txt_email.Enabled = false;
             txt_email.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_email.Location = new Point(315, 243);
+            txt_email.Location = new Point(313, 311);
             txt_email.Name = "txt_email";
             txt_email.PlaceholderText = "digite um e-mail válido";
             txt_email.Size = new Size(259, 26);
@@ -143,7 +145,7 @@
             // label3
             // 
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(315, 199);
+            label3.Location = new Point(313, 267);
             label3.Name = "label3";
             label3.Size = new Size(197, 41);
             label3.TabIndex = 18;
@@ -154,7 +156,7 @@
             // 
             txt_nomeUsuario.Enabled = false;
             txt_nomeUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nomeUsuario.Location = new Point(588, 158);
+            txt_nomeUsuario.Location = new Point(586, 226);
             txt_nomeUsuario.Name = "txt_nomeUsuario";
             txt_nomeUsuario.PlaceholderText = "digite um nome de usuário";
             txt_nomeUsuario.Size = new Size(259, 26);
@@ -164,7 +166,7 @@
             // label2
             // 
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(588, 114);
+            label2.Location = new Point(586, 182);
             label2.Name = "label2";
             label2.Size = new Size(197, 41);
             label2.TabIndex = 16;
@@ -175,7 +177,7 @@
             // 
             txt_nomeCompleto.Enabled = false;
             txt_nomeCompleto.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nomeCompleto.Location = new Point(315, 158);
+            txt_nomeCompleto.Location = new Point(313, 226);
             txt_nomeCompleto.Name = "txt_nomeCompleto";
             txt_nomeCompleto.PlaceholderText = "digite o nome completo";
             txt_nomeCompleto.Size = new Size(259, 26);
@@ -185,7 +187,7 @@
             // label1
             // 
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(315, 114);
+            label1.Location = new Point(313, 182);
             label1.Name = "label1";
             label1.Size = new Size(197, 41);
             label1.TabIndex = 14;
@@ -196,9 +198,9 @@
             // 
             btn_modificar.Enabled = false;
             btn_modificar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_modificar.Location = new Point(315, 381);
+            btn_modificar.Location = new Point(586, 418);
             btn_modificar.Name = "btn_modificar";
-            btn_modificar.Size = new Size(532, 36);
+            btn_modificar.Size = new Size(259, 36);
             btn_modificar.TabIndex = 8;
             btn_modificar.Tag = "usuario";
             btn_modificar.Text = "Modificar";
@@ -208,7 +210,7 @@
             // txt_codUsuario
             // 
             txt_codUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_codUsuario.Location = new Point(439, 64);
+            txt_codUsuario.Location = new Point(437, 132);
             txt_codUsuario.Name = "txt_codUsuario";
             txt_codUsuario.PlaceholderText = "digite o código do usuário";
             txt_codUsuario.Size = new Size(259, 26);
@@ -220,7 +222,7 @@
             // label7
             // 
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(439, 20);
+            label7.Location = new Point(437, 88);
             label7.Name = "label7";
             label7.Size = new Size(259, 41);
             label7.TabIndex = 26;
@@ -229,7 +231,7 @@
             // 
             // btn_mudar
             // 
-            btn_mudar.Location = new Point(704, 64);
+            btn_mudar.Location = new Point(702, 132);
             btn_mudar.Name = "btn_mudar";
             btn_mudar.Size = new Size(143, 26);
             btn_mudar.TabIndex = 10000;
@@ -237,11 +239,37 @@
             btn_mudar.UseVisualStyleBackColor = true;
             btn_mudar.Click += btn_mudar_Click;
             // 
+            // label8
+            // 
+            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(313, 413);
+            label8.Name = "label8";
+            label8.Size = new Size(120, 41);
+            label8.TabIndex = 10001;
+            label8.Text = "Usuário ativo?";
+            label8.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // ckb_status
+            // 
+            ckb_status.AutoSize = true;
+            ckb_status.Checked = true;
+            ckb_status.CheckState = CheckState.Checked;
+            ckb_status.Enabled = false;
+            ckb_status.Location = new Point(456, 426);
+            ckb_status.Name = "ckb_status";
+            ckb_status.Size = new Size(54, 19);
+            ckb_status.TabIndex = 10002;
+            ckb_status.Tag = "usuario";
+            ckb_status.Text = "Ativo";
+            ckb_status.UseVisualStyleBackColor = true;
+            // 
             // EditarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(892, 574);
+            Controls.Add(ckb_status);
+            Controls.Add(label8);
             Controls.Add(btn_mudar);
             Controls.Add(txt_codUsuario);
             Controls.Add(label7);
@@ -286,5 +314,7 @@
         private TextBox txt_codUsuario;
         private Label label7;
         private Button btn_mudar;
+        private Label label8;
+        private CheckBox ckb_status;
     }
 }
