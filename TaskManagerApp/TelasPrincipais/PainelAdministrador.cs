@@ -27,6 +27,14 @@ namespace TaskManagerApp.TelasPrincipais
             MostrarFormularioAdministrativo(Formulario);
         }
 
+        private void menuExcluirUsuario_Click(object sender, EventArgs e)
+        {
+            LiberaTela();
+
+            Formulario = new ExcluirUsuario();
+            MostrarFormularioAdministrativo(Formulario);
+        }
+
         public void MostrarFormularioAdministrativo(Form formulario)
         {
             formulario.IsAccessible = true;

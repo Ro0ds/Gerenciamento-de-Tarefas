@@ -78,6 +78,7 @@
             menuExcluirUsuario.Name = "menuExcluirUsuario";
             menuExcluirUsuario.Size = new Size(180, 22);
             menuExcluirUsuario.Text = "Excluir";
+            menuExcluirUsuario.Click += menuExcluirUsuario_Click;
             // 
             // tarefasToolStripMenuItem
             // 
