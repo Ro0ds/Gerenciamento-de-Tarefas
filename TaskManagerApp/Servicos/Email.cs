@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 
 namespace TaskManagerApp.Servicos
 {
@@ -12,18 +11,18 @@ namespace TaskManagerApp.Servicos
 
         public override bool EnviarEmail(string destinatario, string assunto, string corpo)
         {
-            using(SmtpClient smtp = new SmtpClient(ServidorSMTP, PortaSaida))
+            using(SmtpClient smtp = new SmtpClient(ServidorSMTP))
             {
-                smtp.EnableSsl = UsarSSL;
+                smtp.Port = PortaSaida;
+                smtp.EnableSsl = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.TargetName = "STARTTLS/" + ServidorSMTP;
-                smtp.Credentials = new NetworkCredential(Remetente, SenhaRemetente);
 
                 MailMessage mensagem = new MailMessage();
-                mensagem.From = new MailAddress(Remetente);
-                mensagem.To.Add(new MailAddress(Destinatario));
-                mensagem.Subject = Assunto;
-                mensagem.Body = Corpo;
+                mensagem.From = new MailAddress(destinatario);
+                mensagem.To.Add(new MailAddress(destinatario));
+                mensagem.Subject = assunto;
+                mensagem.Body = corpo;
 
                 smtp.Timeout = 30000;
 
@@ -35,7 +34,7 @@ namespace TaskManagerApp.Servicos
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show($"E-mail para: {Destinatario} não enviado.\nErro: {ex.Message}");
+                    MessageBox.Show($"E-mail para: {destinatario} não enviado.\nErro: {ex.Message}");
 
                     return false;
                 }

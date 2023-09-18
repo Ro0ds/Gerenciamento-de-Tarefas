@@ -20,7 +20,9 @@ namespace TaskManagerApp.Formularios
 
             if(UsuarioExiste(usuario, email))
             {
-                                
+                Gmail gmail = new Gmail();
+
+                gmail.EnviarEmail(email, "Recuperação de senha", "texto da recuperação de senha");
             }
         }
 
