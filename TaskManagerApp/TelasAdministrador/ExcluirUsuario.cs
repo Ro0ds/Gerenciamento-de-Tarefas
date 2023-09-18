@@ -61,15 +61,20 @@ namespace TaskManagerApp.TelasAdministrador
 
                     if(resultado == DialogResult.Yes)
                     {
-                        var tarefas = _context.Tarefas.Where(t => t.CodUsuario == CodUsuario).ToList();
+                        List<Tarefa> tarefas = _context.Tarefas.Where(t => t.CodUsuario == CodUsuario).ToList();
+                        int QuantidadeTarefas = tarefas.Count;
 
                         try
                         {
-
                             _context.Tarefas.RemoveRange(tarefas);
+                            _context.SaveChanges();
 
+                            MessageBox.Show($"{QuantidadeTarefas} Tarefa(s) removidas com sucesso!", "Removação de tarefas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            MessageBox.Show("Tarefas removidas com sucesso!", "Removação de tarefas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            _context.Remove(usuario);
+                            _context.SaveChanges();
+
+                            MessageBox.Show($"Usuário {CodUsuario} removido com sucesso!", "Remover Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch(Exception ex)
                         {
