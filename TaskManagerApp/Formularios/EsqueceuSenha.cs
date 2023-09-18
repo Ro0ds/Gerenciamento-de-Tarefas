@@ -1,21 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using TaskManagerApp.Models;
+using TaskManagerApp.Servicos;
 
 namespace TaskManagerApp.Formularios
 {
     public partial class EsqueceuSenha : Form
     {
+        private DbTaskmanagerContext _context = new DbTaskmanagerContext();
+
         public EsqueceuSenha()
         {
             InitializeComponent();
             lbl_title.Text += "Recuperar Senha";
+        }
+
+        private void btn_enviarRecuperaSenha_Click(object sender, EventArgs e)
+        {
+            string usuario = txt_usuario.Text;
+            string email = txt_email.Text;
+
+            if(UsuarioExiste(usuario, email))
+            {
+                                
+            }
+        }
+
+        private bool UsuarioExiste(string usuario, string email)
+        {
+            return _context.Usuarios.Any(u => u.NomeUsuario == usuario && u.EmailUsuario == email);
         }
     }
 }

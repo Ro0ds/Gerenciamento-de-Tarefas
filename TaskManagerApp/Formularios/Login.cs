@@ -35,7 +35,8 @@ namespace TaskManagerApp.Formularios
 
         private void llbl_recuperarSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            EsqueceuSenha esqueceuSenha = new EsqueceuSenha();
+            esqueceuSenha.ShowDialog();
         }
     }
 }
