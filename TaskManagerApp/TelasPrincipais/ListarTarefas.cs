@@ -41,7 +41,7 @@ namespace TaskManagerApp.TelasPrincipais
             gridListarTarefas.DataSource = tabela;
         }
 
-        public string NormalizaSituacaoTarefa(int situacaoTarefa, DateTime? dataVencimento)
+        public static string NormalizaSituacaoTarefa(int situacaoTarefa, DateTime? dataVencimento)
         {
             string situacaoTarefaNormalizada = string.Empty;
 

@@ -209,6 +209,11 @@ namespace TaskManagerApp
                 this.Width = 1080;
                 this.Height = 720;
             }
+            else if(formulario.Name == "EditarTarefas")
+            {
+                this.Width = 840;
+                this.Height = AlturaPadrao;
+            }
             else
             {
                 this.Width = LarguraPadrao;
