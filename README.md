@@ -8,13 +8,13 @@ Um app simples para gerenciamento de tarefas sendo contruído para fins de estud
 
 ## TODO
 
-* Tela de recuperação de senha com confirmação por e-mail e/ou alguma outra autenticação
-* Edição de tarefas
-* Exclusão de tarefas
-* Inativação/Exclusão de usuários
-* Perfil de usuário
-* Listagem de tarefas por status
-* Configurações sobre banco de dados (possibilidade de usar o sistema em rede?)
+- [x] Tela de recuperação de senha com autenticação
+- [x] Edição de tarefas
+- [x] Exclusão de tarefas
+- [x] Inativação/Exclusão de usuários
+- [ ] Perfil de usuário
+- [ ] Listagem de tarefas por status
+- [ ] Configurações sobre banco de dados (possibilidade de usar o sistema em rede?)
 
 ## Desenvolvimento
 
