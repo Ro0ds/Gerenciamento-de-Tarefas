@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
 using TaskManagerApp.Models;
 using TaskManagerApp.Seguranca;
 
@@ -70,12 +71,14 @@ namespace TaskManagerApp.TelasAdministrador
             {
                 try
                 {
-                    _context.Entry(usuarioOriginal).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+                    _context.Entry(usuarioOriginal).State = EntityState.Detached;
+
                     _context.Usuarios.Update(usuarioModificado);
                     _context.SaveChanges();
 
                     MessageBox.Show("Usuário modificado com sucesso!", "Modificar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    _context.Entry(usuarioModificado).State = EntityState.Detached;
                 }
                 catch(Exception ex)
                 {

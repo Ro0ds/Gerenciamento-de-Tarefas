@@ -77,6 +77,8 @@
             txt_codTarefa.Name = "txt_codTarefa";
             txt_codTarefa.Size = new Size(96, 23);
             txt_codTarefa.TabIndex = 1;
+            txt_codTarefa.TextAlign = HorizontalAlignment.Center;
+            txt_codTarefa.KeyPress += txt_codTarefa_KeyPress;
             // 
             // rctxt_descricao
             // 
