@@ -28,7 +28,7 @@ namespace TaskManagerApp.TelasPrincipais
             tabela.Columns.Add("STATUS", typeof(string));
             tabela.Columns.Add("CRIADA EM", typeof(DateTime));
 
-            foreach(var item in dados)
+            foreach(Tarefa item in dados)
             {
                 if(item.CodUsuario == TelaPrincipal.CodUsuarioConectado)
                 {

@@ -117,18 +117,20 @@ namespace TaskManagerApp.TelasPrincipais
                     dt_termina.Value = (DateTime)TarefaOriginal.DataVencimentoTarefa;
                     int Prioridade = _context.Tarefas.Where(u => u.CodTarefa == codigoTarefa).Select(u => u.PrioridadeTarefa).FirstOrDefault();
 
-                    switch(Prioridade)
-                    {
-                        case 10:
-                            cb_prioridade.Text = "BaixaPrioridade";
-                            break;
-                        case 50:
-                            cb_prioridade.Text = "MediaPrioridade";
-                            break;
-                        case 100:
-                            cb_prioridade.Text = "AltaPrioridade";
-                            break;
-                    }
+                    cb_prioridade.Text = NormalizaPrioridade(Prioridade);
+
+                    //switch(Prioridade)
+                    //{
+                    //    case 10:
+                    //        cb_prioridade.Text = "BaixaPrioridade";
+                    //        break;
+                    //    case 50:
+                    //        cb_prioridade.Text = "MediaPrioridade";
+                    //        break;
+                    //    case 100:
+                    //        cb_prioridade.Text = "AltaPrioridade";
+                    //        break;
+                    //}
 
                     cb_status.Text = ListarTarefas.NormalizaSituacaoTarefa(TarefaOriginal.SituacaoTarefa, TarefaOriginal.DataVencimentoTarefa);
                     dt_criada.Value = (DateTime)TarefaOriginal.CriadaEm;
@@ -181,7 +183,7 @@ namespace TaskManagerApp.TelasPrincipais
             };
         }
 
-        private int NormalizaPrioridade(string prioridade)
+        public static int NormalizaPrioridade(string prioridade)
         {
             switch (prioridade)
             {
@@ -193,6 +195,21 @@ namespace TaskManagerApp.TelasPrincipais
                     return 100;
                 default:
                     return 10;
+            }
+        }
+
+        public static string NormalizaPrioridade(int prioridade)
+        {
+            switch(prioridade)
+            {
+                case 10:
+                    return "BaixaPrioridade";
+                case 50:
+                    return "MediaPrioridade";
+                case 100:
+                    return "AltaPrioridade";
+                default:
+                    return "BaixaPrioridade";
             }
         }
 

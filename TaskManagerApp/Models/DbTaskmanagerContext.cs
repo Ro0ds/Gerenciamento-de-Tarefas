@@ -16,7 +16,7 @@ public partial class DbTaskmanagerContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySql("server=localhost;database=DB_TASKMANAGER;uid=developer;pwd=Acesso@123", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
+        optionsBuilder.UseMySql("server=localhost;database=DB_TASKMANAGER;uid=developer;pwd=Acesso@123", ServerVersion.Parse("8.0.23-mysql"));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
