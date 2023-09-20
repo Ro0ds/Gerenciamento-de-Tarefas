@@ -13,7 +13,7 @@ Um app simples para gerenciamento de tarefas sendo contruído para fins de estud
 - [x] Exclusão de tarefas
 - [x] Inativação/Exclusão de usuários
 - [ ] Perfil de usuário
-- [ ] Listagem de tarefas por status
+- [x] Listagem de tarefas por status
 - [ ] Configurações sobre banco de dados (possibilidade de usar o sistema em rede?)
 
 ## Desenvolvimento
